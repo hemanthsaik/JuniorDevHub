@@ -7,7 +7,7 @@ const Home = () => {
         <div>
             <Navbar className="navbar bg-gray">
                 <div className="container-fluid  p-2">
-                    <a className="navbar-brand mb-0 h1" href="/">Navbar</a>
+                    <Link className="navbar-brand mb-0 h1" href="/">Navbar</Link>
                 </div>
                 <div>
                     <Link to="/login" className="navbar-brand">
@@ -18,8 +18,6 @@ const Home = () => {
                     </Link>
                 </div>
             </Navbar>
-
-
         </div>
     )
 }
