@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Home = () => {
     return (
         <div>
-            <Navbar className="navbar bg-gray">
+            <Navbar className="navbar bg-light">
                 <div className="container-fluid  p-2">
                     <Link className="navbar-brand mb-0 h1" href="/">Navbar</Link>
                 </div>

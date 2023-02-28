@@ -1,7 +1,6 @@
-body {
+.index {
   margin: 0px;
-}
-
-.bg-gray {
   background-color: rgb(220, 220, 220);
+  font-family: sans-serif;
+  text-align: center;
 }
