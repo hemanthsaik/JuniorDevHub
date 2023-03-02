@@ -1,84 +1,33 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 
 const Signup = () => {
-    const [password, setPassword] = useState("");
-    const [email, setEmail] = useState("");
-    const [passwordError, setpasswordError] = useState("");
-    const [emailError, setemailError] = useState("");
-    const navigate = useNavigate();
-
-    const handleValidation = (event) => {
-        let formIsValid = true;
-
-        if (!email.match(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/)) {
-            formIsValid = false;
-            setemailError("Email Not Valid");
-            return false;
-        } else {
-            setemailError("");
-            formIsValid = true;
-        }
-
-        if (!password.match(/^[a-zA-Z]{8,22}$/)) {
-            formIsValid = false;
-            setpasswordError(
-                "Only Letters and length must best min 8 Chracters and Max 22 Chracters"
-            );
-            return false;
-        } else {
-            setpasswordError("");
-            formIsValid = true;
-        }
-        navigate("/login")
-        return formIsValid;
-    };
-
-    const loginSubmit = (e) => {
-        e.preventDefault();
-        handleValidation();
-    };
+    const [userName, setUsername] = useState('')
+    const [password, setPassword] = useState('')
+    const [conformPassword, setConformpassword] = useState('')
 
     return (
-
-        <div className="container">
-            <div className="row d-flex justify-content-center">
-                <div className="col-md-4">
-                    <form id="loginform" onSubmit={loginSubmit}>
-                        <div className="form-group">
-                            <label>Email address</label>
-                            <input
-                                type="email"
-                                className="form-control"
-                                id="EmailInput"
-                                name="EmailInput"
-                                aria-describedby="emailHelp"
-                                placeholder="Enter email"
-                                onChange={(event) => setEmail(event.target.value)}
-                            />
-                            <small id="emailHelp" className="text-danger form-text">
-                                {emailError}
-                            </small>
-                        </div>
-                        <div className="form-group">
-                            <label>Password</label>
-                            <input
-                                type="password"
-                                className="form-control"
-                                id="exampleInputPassword1"
-                                placeholder="Password"
-                                onChange={(event) => setPassword(event.target.value)}
-                            />
-                            <small id="passworderror" className="text-danger form-text">
-                                {passwordError}
-                            </small>
-                        </div>
-                        <button type="submit" className="btn btn-primary">
-                            Submit
-                        </button>
-
-                    </form>
+        <div className="center container">
+            <div className="card flex p-3">
+                <div className="card-title" align="center"><h1>Sign up </h1></div>
+                <div className="card-body">
+                    <div>
+                        <label for="exampleInputEmail1" className="form-label">Email address</label>
+                        <input type="email" className="form-control" id="email" value={userName} onChange={(e) => { setUsername(e.target.value) }} aria-describedby="emailHelp" />
+                    </div>
+                    <div>
+                        <label for="exampleInputEmail1" className="form-label">Enter Password</label>
+                        <input type="password" className="form-control" id="password" value={password} onChange={(e) => { setPassword(e.target.value) }} aria-describedby="emailHelp" />
+                    </div>
+                    <div>
+                        <label for="exampleInputEmail1" className="form-label">Conform Password</label>
+                        <input type="password" className="form-control" id="password" value={conformPassword} onChange={(e) => { setConformpassword(e.target.value) }} aria-describedby="emailHelp" />
+                    </div>
+                    <button className='btn btn-primary mt-2' align="center">Submit</button>
+                    <div>
+                        <label htmlFor="">already have an account! <Link to={"/login"}>Click here to Login</Link></label>
+                    </div>
                 </div>
             </div>
         </div>
