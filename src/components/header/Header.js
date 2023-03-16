@@ -6,7 +6,7 @@ import React from 'react';
 
 export default function Header() {
   return (
-      <Navbar className="navbar bg-light ">
+      <Navbar className="w-100 navbar bg-light position-fixed">
         <div className="container m-auto  p-2">
           <Link className="navbar-brand mb-0 h1" to="/">JuniorDevHub</Link>
         </div>
