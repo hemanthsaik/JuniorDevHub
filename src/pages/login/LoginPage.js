@@ -52,12 +52,12 @@ const Login = () => {
                 <div className="card-title" align="center"><h1>Log in </h1></div>
                 <div className="card-body">
                     <div>
-                        <label for="exampleInputEmail1" className="form-label">Email Id</label>
+                        <label htmlFor="exampleInputEmail1" className="form-label">Email Id</label>
                         <input type="email" className="form-control" id="email" value={userName} onChange={(e) => { setUsername(e.target.value) }} aria-describedby="emailHelp" pattern='/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;' />
                         <small className='text-danger'>{emailError}</small>
                     </div>
                     <div>
-                        <label for="exampleInputEmail1" className="form-label"> Password</label>
+                        <label htmlFor="exampleInputEmail1" className="form-label"> Password</label>
                         <input type="password" className="form-control" id="password" value={password} onChange={(e) => { setPassword(e.target.value) }} aria-describedby="emailHelp" />
                         <small className='text-danger'>{passwordError}</small>
                     </div>

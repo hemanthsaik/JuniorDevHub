@@ -59,17 +59,17 @@ const Signup = () => {
                 <div className="card-title" align="center"><h1>Sign up </h1></div>
                 <div className="card-body">
                     <div>
-                        <label for="exampleInputEmail1" className="form-label">Email address</label>
+                        <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
                         <input type="email" className="form-control" id="email" value={userName} onChange={(e) => { setUsername(e.target.value) }} aria-describedby="emailHelp" />
                         <small className='text-danger'>{emailError}</small>
                     </div>
                     <div>
-                        <label for="exampleInputEmail1" className="form-label">Enter Password</label>
+                        <label htmlFor="exampleInputEmail1" className="form-label">Enter Password</label>
                         <input type="password" className="form-control" id="password" value={password} onChange={(e) => { setPassword(e.target.value) }} aria-describedby="emailHelp" />
                         <small className='text-danger'>{passwordError}</small>
                     </div>
                     <div>
-                        <label for="exampleInputEmail1" className="form-label">Conform Password</label>
+                        <label htmlFor="exampleInputEmail1" className="form-label">Conform Password</label>
                         <input type="password" className="form-control" id="password" value={conformPassword} onChange={(e) => { setConformpassword(e.target.value) }} aria-describedby="emailHelp" />
                         <small className='text-danger'>{conformpasswordError}</small>
                     </div>
