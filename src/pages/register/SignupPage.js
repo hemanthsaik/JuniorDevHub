@@ -56,7 +56,7 @@ const Signup = () => {
                 theme="colored"
             />
             <div className="card flex p-3">
-                <div className="card-title" align="center"><h1>Sign up </h1></div>
+                <div className="card-title" align="center"><h1>Sign up</h1></div>
                 <div className="card-body">
                     <div>
                         <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
@@ -75,7 +75,7 @@ const Signup = () => {
                     </div>
                     <button className='btn btn-primary mt-2' onClick={handelSubmit} align="center">Submit</button>
                     <div>
-                        <label htmlFor="">already have an account! <Link to={"/login"}>Click here to Login</Link></label>
+                        <label htmlFor="">already have an account? <Link to={"/login"}>Click here to Login</Link></label>
                     </div>
                 </div>
             </div>
