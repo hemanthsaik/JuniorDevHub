@@ -1,20 +1,20 @@
 import React, { useState } from 'react'
-import { useNavigate, Link } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
+import { Link } from 'react-router-dom';
 
 
 
-const Signup = () => {
-    const [userName, setUsername] = useState('')
-    const [password, setPassword] = useState('')
-    const [conformPassword, setConformpassword] = useState('')
+const Login = () => {
+    const [userName, setUsername] = useState('');
+    const [password, setPassword] = useState('');
     const [emailError, setEmailError] = useState('')
     const [passwordError, setPasswordError] = useState('')
-    const [conformpasswordError, setConformpasswordError] = useState('')
 
     const handelSubmit = () => {
         let formstatus = true;
-        let epattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        // This code is useless since you might have an Api to control the login
+        
+        /* let epattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
         if (!epattern.test(userName)) {
             formstatus = false;
             setEmailError("Invalid email id");
@@ -26,13 +26,8 @@ const Signup = () => {
             setPasswordError("Invalid password");
         } else {
             setPasswordError("");
-        }
-        if (password != conformPassword) {
-            formstatus = false;
-            setConformpasswordError("Password does not match");
-        } else {
-            setConformpasswordError("");
-        }
+        } */
+
         // do not change the bellow content
         if (formstatus == true) {
             toast.success('Form Submited');
@@ -56,31 +51,28 @@ const Signup = () => {
                 theme="colored"
             />
             <div className="card flex p-3">
-                <div className="card-title" align="center"><h1>Sign up </h1></div>
+
+                <div className="card-title" align="center"><h1>Log in </h1></div>
                 <div className="card-body">
                     <div>
-                        <label for="exampleInputEmail1" className="form-label">Email address</label>
-                        <input type="email" className="form-control" id="email" value={userName} onChange={(e) => { setUsername(e.target.value) }} aria-describedby="emailHelp" />
+                        <label htmlFor="exampleInputEmail1" className="form-label">Email Id</label>
+                        <input type="email" className="form-control" id="email" value={userName} onChange={(e) => { setUsername(e.target.value) }} aria-describedby="emailHelp" pattern='/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;' />
                         <small className='text-danger'>{emailError}</small>
                     </div>
                     <div>
-                        <label for="exampleInputEmail1" className="form-label">Enter Password</label>
+                        <label htmlFor="exampleInputEmail1" className="form-label"> Password</label>
                         <input type="password" className="form-control" id="password" value={password} onChange={(e) => { setPassword(e.target.value) }} aria-describedby="emailHelp" />
                         <small className='text-danger'>{passwordError}</small>
                     </div>
+                    <button onClick={handelSubmit} className='btn btn-primary mt-2' align="center">Submit</button>
                     <div>
-                        <label for="exampleInputEmail1" className="form-label">Conform Password</label>
-                        <input type="password" className="form-control" id="password" value={conformPassword} onChange={(e) => { setConformpassword(e.target.value) }} aria-describedby="emailHelp" />
-                        <small className='text-danger'>{conformpasswordError}</small>
-                    </div>
-                    <button className='btn btn-primary mt-2' onClick={handelSubmit} align="center">Submit</button>
-                    <div>
-                        <label htmlFor="">already have an account! <Link to={"/login"}>Click here to Login</Link></label>
+                        <label htmlFor="">new to JuniorDevHub? <Link to={"/signup"}>Click here to SignUp</Link></label>
                     </div>
                 </div>
             </div>
         </div>
+
     );
 }
 
-export default Signup;
+export default Login;

@@ -1,18 +1,20 @@
-import React from 'react'
-import { Routes, Route, HashRouter, BrowserRouter as Brouter } from "react-router-dom";
-import Home from './components/Home';
-import Login from './components/LoginPage';
-import Signup from './components/SignupPage';
+import React from 'react';
+import { Routes, Route } from "react-router-dom";
+import Home from './pages/home/Home';
+import Login from './pages/login/LoginPage';
+import Signup from './pages/register/SignupPage';
+import Header from './components/header/Header';
 
 
 export default function App() {
   return (
-    <HashRouter>
+    <main>
+      <Header />
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/signup" element={<Signup />} />
       </Routes>
-    </HashRouter>
+    </main>
   )
 }
