@@ -12,7 +12,9 @@ const Login = () => {
 
     const handelSubmit = () => {
         let formstatus = true;
-        let epattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        // This code is useless since you might have an Api to control the login
+        
+        /* let epattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
         if (!epattern.test(userName)) {
             formstatus = false;
             setEmailError("Invalid email id");
@@ -24,7 +26,8 @@ const Login = () => {
             setPasswordError("Invalid password");
         } else {
             setPasswordError("");
-        }
+        } */
+
         // do not change the bellow content
         if (formstatus == true) {
             toast.success('Form Submited');
